@@ -108,7 +108,7 @@ padding: 2vw;
 font-family: 'EB Garamond', serif;
 }
 
-#mainSummary, #mainNow, #mainHere, #mainSeparator {
+.mainContainer {
 position: relative;
 padding: 3vw;
 left: 10vw;
@@ -136,6 +136,11 @@ align-items: center;
 
 #back-to-top:hover {
 font-size: 150%;
+}
+
+#mainPic {
+    justify-content: center;
+    height: inherit;
 }
 
 html, body, div, span, applet, object, iframe,
