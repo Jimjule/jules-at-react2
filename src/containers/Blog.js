@@ -39,11 +39,19 @@ var params = {
 
 const Blog = (data) => {
   
+  const truncate = (text) => {
+    if(text.length > 120) {
+      return [text.substring(0, 120) + "..."]
+    } else {
+      return [text]
+    }
+  }
+
   const populateBlogPosts = () => {
     let blogArray = [];
     for (const post in data.blogs) {
       blogArray.push(
-        <BlogContainer title={data.blogs[post].title} body={data.blogs[post].body} />
+        <BlogContainer title={data.blogs[post].title} body={truncate(data.blogs[post].body[0])} />
       )
     }
     return blogArray;
