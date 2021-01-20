@@ -9,16 +9,16 @@ import Tutorials from "./containers/Tutorials";
 import Projects from "./containers/Projects";
 import blogData from "./blog.json";
 
-export default function Routes({ appProps }) {
-
+export default function Routes({ data: isDarkMode, appProps }) {
+  
     return (
         <BrowserRouter>
           <Switch>
-            <AppliedRoute path="/" exact component={Home} appProps={appProps} options={{ title: 'Jules' }} />
-            <Route path="/blog" render={(props) => <Blog {...props} blogs={blogData.blogs} />} />
-            <Route path="/projects" component={Projects} appProps={appProps} />
-            <Route path="/tutorials" component={Tutorials} appProps={appProps} />
-            <Route path="/music" component={Music} appProps={appProps} />
+            <Route path="/" exact render={(props) => <Home {...props} appProps={appProps} isDarkMode={isDarkMode} options={{ title: 'Jules' }} />} />
+            <Route path="/blog" render={(props) => <Blog {...props} appProps={appProps} blogs={blogData.blogs} isDarkMode={isDarkMode} />} />
+            <Route path="/projects" render={(props) => <Projects {...props} appProps={appProps} isDarkMode={isDarkMode} />} />
+            <Route path="/tutorials" render={(props) => <Tutorials {...props} appProps={appProps} isDarkMode={isDarkMode} />} />
+            <Route path="/music" render={(props) => <Music {...props} appProps={appProps} isDarkMode={isDarkMode} />} />
             { /* Finally, catch all unmatched routes */ }
             <Route component={NotFound} />
           </Switch>

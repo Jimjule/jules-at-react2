@@ -1,17 +1,24 @@
 import React from 'react'
 import BlogContainer from '../components/BlogContainer'
 
-export default function Projects() {
+const Projects = ({isDarkMode}) => {
+  // console.log(data);
+  console.log(isDarkMode);
+  
+  // const isDarkMode = false;
+  
   return(
-    <div className = "container" id = "div-main">
+    <div className={`div-main ${isDarkMode ? 'dark' : 'light'}`}>
 
-      <BlogContainer title="What I'm up to, and have been up to. Maybe what's coming up too." />
-      <BlogContainer />
-      <BlogContainer />
-      <BlogContainer />
-      <BlogContainer />
-      <BlogContainer />
+      <BlogContainer isDarkMode={isDarkMode} title="What I'm up to, and have been up to. Maybe what's coming up too." />
+      <BlogContainer isDarkMode={isDarkMode} />
+      <BlogContainer isDarkMode={isDarkMode} />
+      <BlogContainer isDarkMode={isDarkMode} />
+      <BlogContainer isDarkMode={isDarkMode} />
+      <BlogContainer isDarkMode={isDarkMode} />
       <a href = "#top"><div id ="back-to-top">↑</div></a>
     </div>
   )
 }
+
+export default Projects;

@@ -1,16 +1,18 @@
 import React from 'react'
 import BlogContainer from '../components/BlogContainer'
 
-export default function Music() {
+const Music = ({isDarkMode}) => {
   return(
-    <div className = "container" id = "div-main">
-      <BlogContainer title="I'll add music I've made." />
-      <BlogContainer />
-      <BlogContainer />
-      <BlogContainer />
-      <BlogContainer />
-      <BlogContainer />
+    <div className={`div-main ${isDarkMode ? 'dark' : 'light'}`}>
+      <BlogContainer isDarkMode={isDarkMode} title="I'll add music I've made." />
+      <BlogContainer isDarkMode={isDarkMode} />
+      <BlogContainer isDarkMode={isDarkMode} />
+      <BlogContainer isDarkMode={isDarkMode} />
+      <BlogContainer isDarkMode={isDarkMode} />
+      <BlogContainer isDarkMode={isDarkMode} />
       <a href = "#top"><div id ="back-to-top">↑</div></a>
     </div>
   )
 }
+
+export default Music;

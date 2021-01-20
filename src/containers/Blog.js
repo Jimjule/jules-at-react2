@@ -37,40 +37,28 @@ var params = {
 // })
 
 
-const Blog = (data) => {
-  
-  const truncate = (text) => {
-    if(text.length > 120) {
-      return [text.substring(0, 120) + "..."]
-    } else {
-      return [text]
-    }
-  }
-
+const Blog = ({blogs, isDarkMode}) => {
   const populateBlogPosts = () => {
     let blogArray = [];
-    for (const post in data.blogs) {
+    for (const post in blogs) {
       blogArray.push(
-        <BlogContainer title={data.blogs[post].title} body={truncate(data.blogs[post].body[0])} />
+        <BlogContainer isDarkMode={isDarkMode} key={blogs[post].title + "_" + post} title={blogs[post].title} body={[blogs[post].body[0]]} />
       )
     }
     return blogArray;
   }
 
   return(
-      <div className = "container" id = "div-main">
-        <BlogContainer title={["I'll add a blog soon.", "Maybe with photos."]} />
-        <div className={'mainContainer'}>
-          <img id={'mainPic'} src={'https://s3-eu-west-1.amazonaws.com/jules.at/photos/jules1.jpeg'}/>
+      <div className={`div-main ${isDarkMode ? 'dark' : 'light'}`}>
+        <BlogContainer isDarkMode={isDarkMode} title={["I'll add a blog soon.", "Maybe with photos."]} />
+        <div className={`mainContainer ${isDarkMode ? 'dark' : 'light'}`}>
+          <img className={'mainPic'} src={'https://s3-eu-west-1.amazonaws.com/jules.at/photos/jules1.jpeg'}/>
         </div>
         {
           populateBlogPosts()
         }
-        {/* { blogJSON.map(post => (
-          <BlogContainer title={blogJSON[post].title} body={blogJSON[post].body} />
-        ))} */}
-        <BlogContainer />
-        <BlogContainer />
+        <BlogContainer isDarkMode={isDarkMode}/>
+        <BlogContainer isDarkMode={isDarkMode}/>
         <a href = "#top"><div id ="back-to-top">↑</div></a>
       </div>
   )
