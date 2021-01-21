@@ -13,7 +13,7 @@ const Header = ({data: isDarkMode, onSend}) => {
           Jules
         </h1>
 
-        <div className="toggle-darkmode">
+        <div data-testid="toggle-darkmode" className="toggle-darkmode">
           <label className="switch">
             <input type="checkbox" checked={isDarkMode} onChange={(event) => handleSubmit(event.target.checked)} />
             <span className="slider round"></span>
@@ -23,10 +23,10 @@ const Header = ({data: isDarkMode, onSend}) => {
       </div>
 
       <div className="nav-container">
-        <a href='/' className="nav nav-1">Home</a>
-        <a href='/blog' className="nav nav-2">Blog</a>
-        <a href='/projects' className="nav nav-3">Projects</a>
-        <a href='/music' className="nav nav-4">Music</a>
+        <a href='/' className="nav home">Home</a>
+        <a href='/blog' className="nav blog">Blog</a>
+        <a href='/projects' className="nav projects">Projects</a>
+        <a href='/music' className="nav music">Music</a>
       </div>
 
       <div className={`main-margin ${isDarkMode ? 'dark' : 'light'}`} />

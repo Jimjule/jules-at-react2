@@ -42,14 +42,14 @@ const Blog = ({blogs, isDarkMode}) => {
     let blogArray = [];
     for (const post in blogs) {
       blogArray.push(
-        <BlogContainer isDarkMode={isDarkMode} key={blogs[post].title + "_" + post} title={blogs[post].title} body={[blogs[post].body[0]]} />
+        <BlogContainer isDarkMode={isDarkMode} data-testid={blogs[post].title} key={blogs[post].title + "_" + post} title={blogs[post].title} body={[blogs[post].body[0]]} />
       )
     }
     return blogArray;
   }
 
   return(
-      <div className={`div-main ${isDarkMode ? 'dark' : 'light'}`}>
+      <div className={`div-main blog ${isDarkMode ? 'dark' : 'light'}`}>
         <BlogContainer isDarkMode={isDarkMode} title={["I'll add a blog soon.", "Maybe with photos."]} />
         <div className={`mainContainer ${isDarkMode ? 'dark' : 'light'}`}>
           <img className={'mainPic'} src={'https://s3-eu-west-1.amazonaws.com/jules.at/photos/jules1.jpeg'}/>

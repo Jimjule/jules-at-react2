@@ -8,7 +8,7 @@ const Projects = ({isDarkMode}) => {
   // const isDarkMode = false;
   
   return(
-    <div className={`div-main ${isDarkMode ? 'dark' : 'light'}`}>
+    <div className={`div-main projects ${isDarkMode ? 'dark' : 'light'}`}>
 
       <BlogContainer isDarkMode={isDarkMode} title="What I'm up to, and have been up to. Maybe what's coming up too." />
       <BlogContainer isDarkMode={isDarkMode} />

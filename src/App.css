@@ -63,19 +63,19 @@
   opacity: 1;
 }
 
-.nav-1 {
+.home {
   background-color: #FF2B14;
 }
 
-.nav-2 {
+.blog {
   background-color: #137d7d;
 }
 
-.nav-3 {
+.projects {
   background-color: #FAB40C;
 }
 
-.nav-4 {
+.music {
   background-color: #FA4D7A;
 }
 
@@ -99,13 +99,19 @@
   grid-template-columns: 50vw 50vw;
 }
 
+.light h2 {
+  font-size: 4vw;
+  padding: 2vw;
+  font-family: 'EB Garamond', serif;
+}
+
 .dark h2 {
   font-size: 4vw;
   padding: 2vw;
   font-family: 'EB Garamond', serif;
   color: white;
 }
-  
+
 .dark p {
   font-size: 2vw;
   padding: 2vw;
@@ -113,16 +119,11 @@
   color: white;
 }
 
-.light h2 {
-  font-size: 4vw;
-  padding: 2vw;
-  font-family: 'EB Garamond', serif;
-}
-
 .light p {
   font-size: 2vw;
   padding: 2vw;
   font-family: 'EB Garamond', serif;
+  color: black;
 }
 
 .mainContainer {
