@@ -27,7 +27,7 @@ const BlogContainer = ({title, body, short, isDarkMode}) => {
           {!isExpanded && 
             <div key={element} data-testid={title + "_" + element + "_preview"}>
               <p>
-                {truncate(body[element], isExpanded)}<br/><br/>
+                {truncate(body[element], isExpanded)}<br/>
               </p>
               { body[element].length > shortPost &&
                 <div style={buttonStyle} data-testid={title + "_open"} onClick={() => {openPost()}}>Read more</div>
@@ -38,7 +38,7 @@ const BlogContainer = ({title, body, short, isDarkMode}) => {
           {isExpanded &&
             <div key={element} data-testid={title + "_" + element + "_full"}>
               <p>
-                {body[element]}<br/><br/>
+                {body[element]}<br/>
               </p>
               { !short &&
                 <div style={buttonStyle} data-testid={title + "_close"} onClick={() => {openPost(title)}}>Read less</div>
