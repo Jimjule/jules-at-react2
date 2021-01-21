@@ -15,7 +15,7 @@ const Header = ({data: isDarkMode, onSend}) => {
 
         <div data-testid="toggle-darkmode" className="toggle-darkmode">
           <label className="switch">
-            <input type="checkbox" checked={isDarkMode} onChange={(event) => handleSubmit(event.target.checked)} />
+            <input type="checkbox" checked={!!isDarkMode} onChange={(event) => handleSubmit(event.target.checked)} />
             <span className="slider round"></span>
           </label>
         </div>

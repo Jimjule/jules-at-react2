@@ -2,7 +2,6 @@ import React from "react";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Home from "./containers/Home";
 import NotFound from "./containers/NotFound";
-import AppliedRoute from "./components/AppliedRoute";
 import Blog from "./containers/Blog";
 import Music from "./containers/Music";
 import Tutorials from "./containers/Tutorials";

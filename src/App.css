@@ -25,7 +25,7 @@
 .div-title {
   margin: auto;
   width: 100vw;
-  height: 20vw;
+  height: 18vw;
 }
 
 .div-title-light {
@@ -141,9 +141,9 @@
 }
 
 .toggle-darkmode {
-  position: absolute;
-  right: 1vw;
-  top: 24vh;
+  position: relative;
+  left: calc(99% - 60px);
+  top: calc(92% - 34px);
 }
 
 .switch {
