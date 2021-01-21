@@ -33,6 +33,7 @@
 }
 
 .div-title h1 {
+  position: absolute;
   padding: 3vw;
   font-size: 14vw;
   font-family: 'Roboto Condensed', sans-serif;
