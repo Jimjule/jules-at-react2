@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Header = ({data: isDarkMode, onSend}) => {
-
   const handleSubmit = (updateDarkMode) => {
     onSend(updateDarkMode);
   }
@@ -9,17 +8,18 @@ const Header = ({data: isDarkMode, onSend}) => {
   return (
     <div>
       <div className={`div-title ${isDarkMode ? 'dark' : 'div-title-light'}`}>
+
         <h1>
           Jules
         </h1>
 
         <div data-testid="toggle-darkmode" className="toggle-darkmode">
           <label className="switch">
-            <input type="checkbox" checked={!!isDarkMode} onChange={(event) => handleSubmit(event.target.checked)} />
+            <input type="checkbox" checked={isDarkMode} onChange={(event) => handleSubmit(event.target.checked)} />
             <span className="slider round"></span>
           </label>
         </div>
-
+        
       </div>
 
       <div className="nav-container">

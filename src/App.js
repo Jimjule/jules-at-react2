@@ -2,21 +2,23 @@ import React, { useState } from 'react';
 import './App.css';
 import Routes from "./Routes";
 import Header from "./components/Header";
-import { AppContext } from './libs/contextLib';
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  let darkModeSession = sessionStorage.getItem('darkmode');
+  const [isDarkMode, setIsDarkMode] = useState(JSON.parse(darkModeSession) === true);
 
   const toggleDarkMode = (isDark) => {
     setIsDarkMode(isDark);
+    sessionStorage.removeItem('darkmode');
+    sessionStorage.setItem('darkmode', isDark);
   }
 
     return (
-      <AppContext.Provider value={{ isDarkMode, setIsDarkMode }}>
+      <div>
         {/*<script crossOrigin src="https://s3.amazonaws.com/jules.at"/>*/}
         <Header data={isDarkMode} onSend={toggleDarkMode} />
         <Routes data={ isDarkMode } />
-      </AppContext.Provider>
+      </div>
     );
 }
 export default App;

@@ -2,11 +2,6 @@ import React from 'react'
 import BlogContainer from '../components/BlogContainer'
 
 const Projects = ({isDarkMode}) => {
-  // console.log(data);
-  console.log(isDarkMode);
-  
-  // const isDarkMode = false;
-  
   return(
     <div className={`div-main projects ${isDarkMode ? 'dark' : 'light'}`}>
 
