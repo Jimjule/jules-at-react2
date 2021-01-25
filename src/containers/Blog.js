@@ -1,13 +1,14 @@
 import React from 'react'
+import BlogContainer from '../components/BlogContainer'
 
-// var aws = require('aws-sdk');
-//
-// // var config = require('../../config/environment/' + process.env.NODE_ENV); // require your config file
-//
-// var config = require('../config');
-//
-// var s3 = new aws.S3({ accessKeyId: config.AWS_ID, secretAccessKey: config.AWS_KEY }); //create a s3 Object with s3 User ID and Key
-//
+var aws = require('aws-sdk');
+
+// var config = require('../../config/environment/' + process.env.NODE_ENV); // require your config file
+
+const config = require('../config');
+
+var s3 = new aws.S3({ region: config.region, accessKeyId: config.AWS_ID, secretAccessKey: config.AWS_KEY }); //create an s3 Object with s3 User ID and Key
+
 // var getParams = {
 //   Bucket: 'jules.at',
 //   Key: 'photos/jules1.jpeg'
@@ -52,7 +53,7 @@ const Blog = ({blogs, isDarkMode}) => {
       <div className={`div-main blog ${isDarkMode ? 'dark' : 'light'}`}>
         <BlogContainer isDarkMode={isDarkMode} title={["I'll add a blog soon.", "Maybe with photos."]} />
         <div className={`mainContainer ${isDarkMode ? 'dark' : 'light'}`}>
-          <img className={'mainPic'} src={'https://s3-eu-west-1.amazonaws.com/jules.at/photos/jules1.jpeg'}/>
+          <img className={'mainPic'} src={'https://s3-eu-west-1.amazonaws.com/jules.at/photos/jules1.jpeg'} alt='B&W Jules'/>
         </div>
         {
           populateBlogPosts()
