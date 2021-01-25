@@ -5,7 +5,7 @@ const Home = ({isDarkMode}) => {
   
   return(
     <div className={`div-main home ${isDarkMode ? 'dark' : 'light'}`}>
-      <BlogContainer isDarkMode={isDarkMode} title="Hi, I'm Jules" body={["Music Maker,", "Programmer,", "Language Lover.", "Partner of Phroobin.", "Based in London, England."]} />
+      <BlogContainer isDarkMode={isDarkMode} title="Hi, I'm Jules" body={["Music Maker,", "Programmer,", "Language Lover.", "Based in London, England."]} />
       <BlogContainer isDarkMode={isDarkMode} />
       <BlogContainer isDarkMode={isDarkMode} title="Right Now" body={["I'm stuck indoors.", "I'm finishing my website!", "I'm collecting my projects to add to this website."]} />
       <BlogContainer isDarkMode={isDarkMode} />

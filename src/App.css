@@ -145,6 +145,7 @@
   position: relative;
   left: calc(99% - 60px);
   top: calc(92% - 34px);
+  width: 60px;
 }
 
 .switch {
