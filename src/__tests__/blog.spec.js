@@ -40,6 +40,6 @@ describe('Rendering the blog page', () => {
   })
 
   it('Truncates the body preview', () => {
-    expect(getByTestId("It's a long one_0_preview").innerHTML).toContain('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq...');
+    expect(getByTestId("It's a long one_0_preview").innerHTML).toContain('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim...');
   })
 })

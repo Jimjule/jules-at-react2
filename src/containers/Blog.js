@@ -51,7 +51,7 @@ const Blog = ({blogs, isDarkMode}) => {
 
   return(
       <div className={`div-main blog ${isDarkMode ? 'dark' : 'light'}`}>
-        <BlogContainer isDarkMode={isDarkMode} title={["I'll add a blog soon.", "Maybe with photos."]} />
+        <BlogContainer isDarkMode={isDarkMode} title={["Here in my Blogs"]} body={["There are thoughts and things I've learned, or at least the ones I think are worth tracking.", "It's still early days, so expect lots of change.", "Also, these can be expanded."]} />
         <div className={`mainContainer ${isDarkMode ? 'dark' : 'light'}`}>
           <img className={'mainPic'} src={'https://s3-eu-west-1.amazonaws.com/jules.at/photos/jules1.jpeg'} alt='B&W Jules'/>
         </div>

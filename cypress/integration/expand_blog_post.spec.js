@@ -2,10 +2,10 @@ describe('Blog posts', () => {
   it('Opens post on click', () => {
     cy.visit('http://localhost:3001/blog');
 
-    cy.get('[data-testid="thang"]')
+    cy.get('[data-testid="Here in my Blogs"]')
       .should('be.visible');
 
-    cy.get('[data-testid="thang_0_preview"]')
+    cy.get('[data-testid="Here in my Blogs_0_preview"]')
       .should('be.visible');
 
     cy.get('[data-testid="thang_open"]')

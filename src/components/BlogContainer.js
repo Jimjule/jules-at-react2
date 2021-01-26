@@ -1,15 +1,29 @@
 import React, { useState } from 'react';
 
-const BlogContainer = ({title, body, short, isDarkMode}) => {
+const BlogContainer = ({title, body, isDarkMode}) => {
 
   const [isExpanded, setIsExpanded] = useState(false);
-  const shortPost = 120;
+  const shortPost = 140;
+  let previewLength = 0;
+  let blogLength = 0;
+  
+  const isShort = () => {
+    for (const text in body) {
+      blogLength += body[text].length;
+    }
+    return blogLength < shortPost;
+  }
+  
+  const short = isShort();
 
   const truncate = (text, isExpanded) => {
-    if(text.length > shortPost && !isExpanded) {
-      return [text.substring(0, shortPost) + "..."]
-    } else {
-      return [text]
+    if (previewLength + text.length < shortPost && !isExpanded) {
+      previewLength += text.length;
+      return [text];
+    } else if (previewLength < shortPost && !isExpanded) {
+      let truncatedText = text.substring(0, shortPost - previewLength);
+      previewLength += truncatedText.length;
+      return [truncatedText + "..."];
     }
   }
 
@@ -29,9 +43,6 @@ const BlogContainer = ({title, body, short, isDarkMode}) => {
               <p>
                 {truncate(body[element], isExpanded)}<br/>
               </p>
-              { body[element].length > shortPost &&
-                <div style={buttonStyle} data-testid={title + "_open"} onClick={() => {openPost()}}>Read more</div>
-              }
             </div>
           }
 
@@ -40,15 +51,23 @@ const BlogContainer = ({title, body, short, isDarkMode}) => {
               <p>
                 {body[element]}<br/>
               </p>
-              { !short &&
-                <div style={buttonStyle} data-testid={title + "_close"} onClick={() => {openPost(title)}}>Read less</div>
-              }
             </div>
           }
 
         </div>
       )
     }
+
+    bodyArray.push(
+      <div key={title + "_expand"}>
+        { !isExpanded && !short &&
+          <div style={buttonStyle} data-testid={title + "_open"} onClick={() => {openPost()}}>Read more</div>
+        }
+        { isExpanded && !short &&
+          <div style={buttonStyle} data-testid={title + "_close"} onClick={() => {openPost(title)}}>Read less</div>
+        }
+      </div>
+    )
 
     return(
       bodyArray
