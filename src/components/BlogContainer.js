@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const BlogContainer = ({title, body, isDarkMode}) => {
-
+  
   const [isExpanded, setIsExpanded] = useState(false);
   const shortPost = 140;
   let previewLength = 0;
