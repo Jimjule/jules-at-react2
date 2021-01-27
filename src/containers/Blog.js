@@ -5,9 +5,9 @@ var aws = require('aws-sdk');
 
 // var config = require('../../config/environment/' + process.env.NODE_ENV); // require your config file
 
-const config = require('../config');
+// const config = require('../config');
 
-var s3 = new aws.S3({ region: config.region, accessKeyId: config.AWS_ID, secretAccessKey: config.AWS_KEY }); //create an s3 Object with s3 User ID and Key
+// var s3 = new aws.S3({ region: config.region, accessKeyId: config.AWS_ID, secretAccessKey: config.AWS_KEY }); //create an s3 Object with s3 User ID and Key
 
 // var getParams = {
 //   Bucket: 'jules.at',
