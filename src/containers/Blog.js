@@ -43,7 +43,7 @@ const Blog = ({blogs, isDarkMode}) => {
     let blogArray = [];
     for (const post in blogs) {
       blogArray.push(
-        <BlogContainer isDarkMode={isDarkMode} data-testid={blogs[post].title} key={blogs[post].title + "_" + post} title={blogs[post].title} body={[blogs[post].body[0]]} />
+        <BlogContainer isDarkMode={isDarkMode} data-testid={blogs[post].title} key={blogs[post].title + "_" + post} title={blogs[post].title} body={blogs[post].body} />
       )
     }
     return blogArray;

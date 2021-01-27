@@ -10,7 +10,7 @@ const Home = ({isDarkMode}) => {
       <BlogContainer isDarkMode={isDarkMode} title="Right Now" body={["I'm stuck indoors.", "I'm finishing my website!", "I'm collecting my projects to add to this website."]} />
       <BlogContainer isDarkMode={isDarkMode} />
       <BlogContainer isDarkMode={isDarkMode} title="What You'll Find Here" body={["This is a place for me to track my thoughts and keep my projects together.", "The idea is to keep things in sight and therefore, in mind."]} />
-      <BlogContainer isDarkMode={isDarkMode} />
+      <BlogContainer isDarkMode={isDarkMode} title="About this Website" body={["Programmed in React.", "Tested with Cypress and Jest.", "Hosted on AWS."]} />
       <a href = "#top"><div id ="back-to-top">↑</div></a>
     </div>
   )
