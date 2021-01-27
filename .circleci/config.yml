@@ -9,5 +9,5 @@ workflows:
       - cypress/run:
           yarn: false
           start: npm start
-          wait-on: 'http://localhost:3000'
-          no-workspace: true
+          # wait-on: 'http://localhost:3000'
+          # no-workspace: true
