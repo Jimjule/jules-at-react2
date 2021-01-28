@@ -9,6 +9,7 @@
 /coverage
 /cypress/screenshots/*
 /cypress/videos/*
+/cypress/support/*
 cypress.env.json
 
 # production
@@ -27,3 +28,5 @@ yarn-debug.log*
 yarn-error.log*
 
 config.js
+
+.idea/*
