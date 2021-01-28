@@ -1,6 +1,6 @@
 describe('Toggle button', () => {
   it('Changes to and from dark mode', () => {
-    cy.visit('http://localhost:3001');
+    cy.visit('http://localhost:3000');
 
     cy.get('[data-testid="toggle-darkmode"]')
       .should('be.visible');
